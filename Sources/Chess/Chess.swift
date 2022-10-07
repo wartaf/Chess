@@ -15,10 +15,12 @@ public class Chess{
     var halfMove: Int = 0
     var moveNumber: Int = 0
     
+    
     var kingsPosition: [PieceColor: Int] = [.white: -1, .black: -1]
     
     let pawnOffset: [PieceColor: [Int]] = [ .white: [-16, -32, -17, -15], .black: [16, 32, 17, 15] ]
     
+    // Generate moves base on addition to offset
     let pieceOffset: [PieceType: [Int]] = [
         .Knight: [-18, -33, -31, -14,  18, 33, 31,  14],
         .Bishop: [-17, -15,  17,  15],

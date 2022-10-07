@@ -44,6 +44,20 @@ extension Chess {
         let _ = undoMove()
         return output
     }
+    /*
+    func moveFromSAN(san: String){
+        // strip off any move decorations: e.g Nf3+?!
+            //let cleanMove = strippedSAN(san);
+    }
+    
+    func strippedSAN(_ san: String) -> String {
+        var move = san.replacingOccurrences(of: "=", with: "")
+        let regex = try? NSRegularExpression(pattern: "/[+#]?[?!]*$/")
+        move = regex?.stringByReplacingMatches(in: move, range: NSRange(0..<move.utf16.count), withTemplate: "") ?? ""
+        return move
+      //return move.replace(/=/,'').replace(/[+#]?[?!]*$/,'');
+    }
+     */
     
     func disambiguator(move: Move, sloppy: Bool) -> String {
         print("disambiguator implementation")

@@ -104,6 +104,38 @@ extension Chess{
         activeColor = toggleColor(activeColor)
     }
     
+    //move('Nxb7')      <- where 'move' is a case-sensitive SAN string
+    //public func makeMove (SAN: String){ }
+    
+    public func makeMove (from: String, to: String, promotion: PieceType?) {
+        let moves = generateMoves()
+        var moveValue: Move?
+        
+        /* convert the pretty move object to an ugly move object */
+        let len = moves.count
+        for i in 0..<len {
+            let m = moves[i]
+            if from == algebraic(i: m.moveFrom) && to == algebraic(i: m.moveTo) {
+                if let prom = m.promotion {
+                    if prom == promotion {
+                        moveValue = m
+                        break
+                    }
+                } else {
+                    moveValue = m
+                    break
+                }
+                
+            }
+        }
+        
+        /* failed to find move */
+        if let m = moveValue {
+            makeMove(move: m)
+        }
+        return
+    }
+    
     public func undoMove() -> Move?{
         guard let old = history.popLast() else { return nil }
         
