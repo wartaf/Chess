@@ -43,7 +43,7 @@ public class Chess{
 
     var history: [History] = []
     
-    let defaultPosition = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    public let defaultPosition = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
     
     public init (fen: String){
         board = Array<ChessPiece?>(repeating: nil, count: 128)
