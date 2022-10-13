@@ -10,6 +10,7 @@ import Foundation
 extension Chess {
     
     public func load(fen: String){
+        clear()
         let tokens = fen.split(separator: " ")
         let position = Array(tokens[0])
         var square = 0
