@@ -105,7 +105,12 @@ extension Chess{
     }
     
     //move('Nxb7')      <- where 'move' is a case-sensitive SAN string
-    //public func makeMove (SAN: String){ }
+    public func makeMove (SAN: String) {
+        if let move = moveFromSAN(san: SAN) {
+            makeMove(move: move)
+        }
+        return
+    }
     
     public func makeMove (from: String, to: String, promotion: PieceType?) {
         let moves = generateMoves()
